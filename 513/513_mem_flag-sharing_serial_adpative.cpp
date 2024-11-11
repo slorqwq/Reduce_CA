@@ -73,8 +73,8 @@ int recovery_x[15][5]= { 0 };
 int recovery_z[15][5]= { 0 }; 
 int recovery_x_flag[table_length][5]= { 0 };
 int recovery_z_flag[table_length][5]= { 0 }; 
-int stabilizer_x[4][5]= { 0 }; // 4­Óstabilizer, wight 5 
-int stabilizer_z[4][5]= { 0 }; // 4­Óstabilizer, wight 5 
+int stabilizer_x[4][5]= { 0 }; // 4å€‹stabilizer, wight 5 
+int stabilizer_z[4][5]= { 0 }; // 4å€‹stabilizer, wight 5 
 int test1[4] = { 0 }; 
 int test2[6] = { 0 }; 
 int test3[10] = { 0 }; 
@@ -89,12 +89,12 @@ int main(){
 
 //============================================================================================================================
 
-//Åª¨útable    
+//è®€å–table    
 
 
     ifstream fin1("table\\513table_s.txt");
     if(!fin1) {
-        cout << "µLªkÅª¤JÀÉ®×\n";
+        cout << "ç„¡æ³•è®€å…¥æª”æ¡ˆ\n";
         system("pause");
         return 0;
     }
@@ -105,7 +105,7 @@ int main(){
   
     ifstream fin2("table\\recovery_x.txt");
     if(!fin2) {
-        cout << "µLªkÅª¤JÀÉ®×\n";
+        cout << "ç„¡æ³•è®€å…¥æª”æ¡ˆ\n";
         system("pause");
         return 0;
     }
@@ -117,7 +117,7 @@ int main(){
     
     ifstream fin3("table\\recovery_z.txt");
     if(!fin3) {
-        cout << "µLªkÅª¤JÀÉ®×\n";
+        cout << "ç„¡æ³•è®€å…¥æª”æ¡ˆ\n";
         system("pause");
         return 0;
     }
@@ -128,7 +128,7 @@ int main(){
 
     ifstream fin4("table\\513table_p.txt");
     if(!fin4) {
-        cout << "µLªkÅª¤JÀÉ®×\n";
+        cout << "ç„¡æ³•è®€å…¥æª”æ¡ˆ\n";
         system("pause");
         return 0;
     }
@@ -139,7 +139,7 @@ int main(){
 
     ifstream fin5("table\\513table_flag.txt");
     if(!fin5) {
-        cout << "µLªkÅª¤JÀÉ®×\n";
+        cout << "ç„¡æ³•è®€å…¥æª”æ¡ˆ\n";
         system("pause");
         return 0;
     }
@@ -151,7 +151,7 @@ int main(){
 
     ifstream fin6("table\\recovery_x_flag.txt");
     if(!fin6) {
-        cout << "µLªkÅª¤JÀÉ®×\n";
+        cout << "ç„¡æ³•è®€å…¥æª”æ¡ˆ\n";
         system("pause");
         return 0;
     }
@@ -162,7 +162,7 @@ int main(){
 
     ifstream fin7("table\\recovery_z_flag.txt");
     if(!fin7) {
-        cout << "µLªkÅª¤JÀÉ®×\n";
+        cout << "ç„¡æ³•è®€å…¥æª”æ¡ˆ\n";
         system("pause");
         return 0;
     }
@@ -174,7 +174,7 @@ int main(){
 	
     ifstream fin8("table\\adptive_index.txt");
     if(!fin8) {
-        cout << "µLªkÅª¤JÀÉ®×\n";
+        cout << "ç„¡æ³•è®€å…¥æª”æ¡ˆ\n";
         system("pause");
         return 0;
     }
@@ -186,7 +186,7 @@ int main(){
 //============================================================================================================================    
     
 	
-	// ¼Æ¬ícounter 
+	// æ•¸ç§’counter 
     int input;
     clock_t start, end;
     start = clock();
@@ -200,7 +200,7 @@ int main(){
     double Total_number, Error_number, probability;
     int s1, s2, s3, s4, s5, s6, s7, s8, m1, m2, m3, m4,m5,m6,m7,m8, q1, q2, f1, f2;
     int s9,s10,s11,s12,s13,s14,s15,s16;
-    int N = 15; // ¤Á N ­Ó®æ¤l
+    int N = 15; // åˆ‡ N å€‹æ ¼å­
     int Error_vector[2][n]={0};
     int Error_vector2[2][n]={0};
     int xe[1]={2}   ; // sigle error by user , X, Z, Y = 2, 3, 4
@@ -221,10 +221,10 @@ int main(){
         
         //probability = 0.0001+0.0001*(i-1)*(i*i/2); // gamma=1 ; N=4
         probability = 0.00001+0.00001*(i-1)*(i*i/2); // gamma=1 ; N=4
-		Total_number = 0; // Á`¦@°õ¦æ¹q¸ôªº¦¸¼Æ
-        Error_number = 0; // ´ú¨ì¬O¹q¸ôªº output ¬O malignant pairªº¦¸¼Æ
-        //while(Total_number<10000||Error_number<1600){ // Error_number = malignant pair ¼Æ¶q
-       while(Total_number<100000000){ // Error_number = malignant pair ¼Æ¶q
+		Total_number = 0; // ç¸½å…±åŸ·è¡Œé›»è·¯çš„æ¬¡æ•¸
+        Error_number = 0; // æ¸¬åˆ°æ˜¯é›»è·¯çš„ output æ˜¯ malignant pairçš„æ¬¡æ•¸
+        //while(Total_number<10000||Error_number<1600){ // Error_number = malignant pair æ•¸é‡
+       while(Total_number<100000000){ // Error_number = malignant pair æ•¸é‡
         	index_loop = i+index_loop;
             s1 = 0;            s2 = 0;            s3 = 0;            s4 = 0;
             s5 = 0;            s6 = 0;            s7 = 0;            s8 = 0;
@@ -241,7 +241,7 @@ int main(){
    			c_time_string = ctime(&current_time);
             //*************************************
             for(int i=0; i<2; i++){
-                for(int j=0; j<n; j++)	Error_vector[i][j] = 0; // ¦b¶i¤J·sªº¹q¸ô¤§«e, ±Nerror vectorÂk¹s (²Ä¤@¦C: ¬ö¿ı X error, ²Ä¤G¦C: ¬ö¿ı Z error)
+                for(int j=0; j<n; j++)	Error_vector[i][j] = 0; // åœ¨é€²å…¥æ–°çš„é›»è·¯ä¹‹å‰, å°‡error vectoræ­¸é›¶ (ç¬¬ä¸€åˆ—: ç´€éŒ„ X error, ç¬¬äºŒåˆ—: ç´€éŒ„ Z error)
             }
 	
 	circuit(Error_vector, probability, Gamma, beta, alpha );	
@@ -405,7 +405,7 @@ int main(){
 								 // cout <<  "compare result = "<< compare_result << endl;
 								 // cout <<  "j= "  << j << endl;    
 								              
-				                    //¨Ï¥Îrecovery table¶i¦æ revcovery (error correction)
+				                    //ä½¿ç”¨recovery tableé€²è¡Œ revcovery (error correction)
 				               	
 				                    for (int k=0; k<5; k++){
 				                        Error_vector[0][k]= (Error_vector[0][k]+recovery_x_flag[jj][k])%2;    
@@ -433,7 +433,7 @@ int main(){
 	if ( m1==1 || m2==1 || m3==1 || m4==1  ){
 				
 				for(int i=0; i<2; i++){
-                	for(int j=5; j<n; j++)	Error_vector[i][j] = 0; // ¦b¶i¤J·sªº¹q¸ô¤§«e, ±Nerror vectorÂk¹s (²Ä¤@¦C: ¬ö¿ı X error, ²Ä¤G¦C: ¬ö¿ı Z error)
+                	for(int j=5; j<n; j++)	Error_vector[i][j] = 0; // åœ¨é€²å…¥æ–°çš„é›»è·¯ä¹‹å‰, å°‡error vectoræ­¸é›¶ (ç¬¬ä¸€åˆ—: ç´€éŒ„ X error, ç¬¬äºŒåˆ—: ç´€éŒ„ Z error)
             	}
             	
             	
@@ -453,7 +453,7 @@ int main(){
                     test1[i]=syndrome_table_p[j][i];
                 }
                 
-                // ±Æ°£syndrome = 0000ªº±¡§Ö 
+                // æ’é™¤syndrome = 0000çš„æƒ…å¿« 
                 if (symdorme_result[0] == 0 &&  symdorme_result[1] == 0 && symdorme_result[2] == 0 && symdorme_result[3] == 0  ){
                 	break;
 				}
@@ -486,7 +486,7 @@ ckp1:
 
 
      		for(int i=0; i<2; i++){
-                for(int j=5; j<n; j++)	Error_vector[i][j] = 0; // ¦b¶i¤J·sªº¹q¸ô¤§«e, ±Nerror vectorÂk¹s (²Ä¤@¦C: ¬ö¿ı X error, ²Ä¤G¦C: ¬ö¿ı Z error)
+                for(int j=5; j<n; j++)	Error_vector[i][j] = 0; // åœ¨é€²å…¥æ–°çš„é›»è·¯ä¹‹å‰, å°‡error vectoræ­¸é›¶ (ç¬¬ä¸€åˆ—: ç´€éŒ„ X error, ç¬¬äºŒåˆ—: ç´€éŒ„ Z error)
             }
 
 		perfect(Error_vector);	
@@ -505,7 +505,7 @@ ckp1:
                 for (int i=0; i<4; i++){
                     test1[i]=syndrome_table[j][i];
                 }
-                // ±Æ°£syndrome = 0000ªº±¡§Ö 
+                // æ’é™¤syndrome = 0000çš„æƒ…å¿« 
                 if (symdorme_result[0] == 0 &&  symdorme_result[1] == 0 && symdorme_result[2] == 0 && symdorme_result[3] == 0  ){
                 	break;
 				}
@@ -524,7 +524,7 @@ ckp1:
                 
             }	 
       
-		//±Æ°£logci X, logic Z 
+		//æ’é™¤logci X, logic Z 
 		
 		for (int i=0; i<5;i++){
 			s9=(s9+Error_vector[0][i])%2;
@@ -581,15 +581,15 @@ ckp1:
 int correct(int (*Error_vector)[n], int a, int B){
 	a = a - 1;
 	if( B==2 ){
-		*(*(Error_vector+0)+a) = (*(*(Error_vector+0)+a) + 1)%2;   // X error®É ,¦A¸Óqubit¸É¤W¤@­Óerror count
+		*(*(Error_vector+0)+a) = (*(*(Error_vector+0)+a) + 1)%2;   // X erroræ™‚ ,å†è©²qubitè£œä¸Šä¸€å€‹error count
 	//	cout << "X error on " << a+1 << endl;
 	}
 	if( B==3 ){
-		*(*(Error_vector+1)+a) = (*(*(Error_vector+1)+a) + 1)%2;    // Z error®É,¦A¸Óqubit¸É¤W¤@­Óerror count
+		*(*(Error_vector+1)+a) = (*(*(Error_vector+1)+a) + 1)%2;    // Z erroræ™‚,å†è©²qubitè£œä¸Šä¸€å€‹error count
 	//	cout << "Z error on " << a+1 << endl;
 	}
 	if( B==4 ){
-		*(*(Error_vector+0)+a) = (*(*(Error_vector+0)+a) + 1)%2;    // Y error®É,¦A¸Óqubit¸É¤W¤@­ÓX & Y error count
+		*(*(Error_vector+0)+a) = (*(*(Error_vector+0)+a) + 1)%2;    // Y erroræ™‚,å†è©²qubitè£œä¸Šä¸€å€‹X & Y error count
 		*(*(Error_vector+1)+a) = (*(*(Error_vector+1)+a) + 1)%2;
 	//	cout << "Y error on " << a+1 << endl;
 	}
@@ -599,13 +599,13 @@ int correct(int (*Error_vector)[n], int a, int B){
 int SQerror(int (*Error_vector)[n], int a, double probability){
     a = a - 1;
     r = next64()/(pow(2,64));
-    if( r < (probability/3) ){ // depolarizing channel, r < (1/3)*p µo¥Í X error
+    if( r < (probability/3) ){ // depolarizing channel, r < (1/3)*p ç™¼ç”Ÿ X error
         *(*(Error_vector+0)+a) = (*(*(Error_vector+0)+a) + 1)%2;
     }
-    if( r > (probability/3) && r < (2*probability/3) ){ // (1/3)*p < r < (2/3)*p µo¥Í Z error
+    if( r > (probability/3) && r < (2*probability/3) ){ // (1/3)*p < r < (2/3)*p ç™¼ç”Ÿ Z error
         *(*(Error_vector+1)+a) = (*(*(Error_vector+1)+a) + 1)%2;
     }
-    if( r > (2*probability/3) && r < (probability) ){ // (2/3)*p < r < p µo¥Í Y error
+    if( r > (2*probability/3) && r < (probability) ){ // (2/3)*p < r < p ç™¼ç”Ÿ Y error
         *(*(Error_vector+0)+a) = (*(*(Error_vector+0)+a) + 1)%2;
         *(*(Error_vector+1)+a) = (*(*(Error_vector+1)+a) + 1)%2;
     }
@@ -620,10 +620,10 @@ int TQerror(int (*Error_vector)[n], int a, int b, double probability){
 int CNOT(int (*Error_vector)[n], int a, int b){
     a = a - 1;
     b = b - 1;
-    if(Error_vector[0][a]==1){                                     // X error µo¥Í
+    if(Error_vector[0][a]==1){                                     // X error ç™¼ç”Ÿ
         Error_vector[0][b] = (Error_vector[0][b] + 1)%2;
     }
-    if(Error_vector[1][b]==1){    								   // Z error µo¥Í
+    if(Error_vector[1][b]==1){    								   // Z error ç™¼ç”Ÿ
         Error_vector[1][a] = (Error_vector[1][a] + 1)%2;
     }
     
@@ -643,7 +643,7 @@ int Hadamard(int (*Error_vector)[n], int a){
 	
 	if(Error_vector[0][a] == 1 || Error_vector[1][a] == 1 ){
 
-		if(Error_vector[0][a]==1 && Error_vector[1][a]==1 ){  // ¦pªG¬OY error ¥ı¸É¤@¦¸X, Z error 
+		if(Error_vector[0][a]==1 && Error_vector[1][a]==1 ){  // å¦‚æœæ˜¯Y error å…ˆè£œä¸€æ¬¡X, Z error 
 			Error_vector[0][a] = (Error_vector[0][a] + 1)%2;
 			Error_vector[1][a] = (Error_vector[1][a] + 1)%2;
 		}		
@@ -1461,7 +1461,7 @@ int circuit(int (*Error_vector)[n], double probability, double Gamma, double bet
     SQerror(Error_vector, 10, probability*alpha);
     SQerror(Error_vector, 11, probability*alpha);
 	
-//¹q¸ôª©¥»:513_code_parallel_parallel_v3 
+//é›»è·¯ç‰ˆæœ¬:513_code_parallel_parallel_v3 
 
 /*
 for(int i){
