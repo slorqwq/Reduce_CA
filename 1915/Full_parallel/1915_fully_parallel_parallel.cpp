@@ -187,8 +187,8 @@ int syndrome_result_ptx_m4[table_width_ptx_m4] = { 0 };
 int test1_ptx_m4[table_width_ptx_m4] = { 0 };  //
 int recovery_ptx_m4[table_length_ptx_m4][38]= { 0 };
 
-int syndrome[190][9]= { 0 };
-int recovery[190][19]= { 0 };
+int syndrome[94183][9]= { 0 };
+int recovery[94183][19]= { 0 };
 int symdorme_result_x[9];
 int symdorme_result_z[9];
 int test1[9]; // syndrome talbe for function used
@@ -631,7 +631,7 @@ int main(){
         system("pause");
         return 0;
     }
-    for(int i=0;i<190;i++)
+    for(int i=0;i<94183;i++)
         for(int k=0;k<9;k++)
             fin_z_1 >> syndrome[i][k];
     fin_z_1.close();
@@ -642,7 +642,7 @@ int main(){
         system("pause");
         return 0;
     }
-    for(int i=0;i<190;i++)
+    for(int i=0;i<94183;i++)
         for(int k=0;k<19;k++)
             fin_z_2 >> recovery[i][k];
     fin_z_2.close();
@@ -658,7 +658,7 @@ int main(){
     double Total_number, Error_number, detected_number, probability;
     int s1, s2, s3, s4, s5, s6, s7, s8, m1, m2, m3, m4,m5 ,m6 ,q1 ,q2 ,q3 ,ga1, ga2;
     int s9,s10,s11,s12,s13,s14,s15,s16, counter;
-    int N = 17; // 切 N 個格子
+    int N = 7; // 切 N 個格子
     int Error_vector[2][n]={0};
     int Error_vector2[2][n]={0};
     int xe[1]={2}   ; // sigle error by user , X, Z, Y = 2, 3, 4
@@ -668,7 +668,7 @@ int main(){
     double Display_p[N], Display_e[N], Display_d[N];
     
     double gamma = 0.01; // memory error
-    double alpha = 10; // measurement error
+    double alpha = 1; // measurement error
     double beta = 1;  // CNOT error
     
     
@@ -677,6 +677,7 @@ int main(){
     for(int i=1; i<N; i++){
         
       
+        //probability = 0.0001+0.0001*(i-1)*(i*i/2); 
         probability = 0.0001+0.0001*(i-1)*(i*i/2); 
         Total_number = 0; 
         Error_number = 0; 
@@ -2934,7 +2935,7 @@ int main(){
                     
                     
                     //compare test1 and symdorme_result_z array and get index j
-                    for (int j=0; j<190; j++){
+                    for (int j=0; j<94183; j++){
                         
                         for (int i=0; i<9; i++){
                             test1[i]=syndrome[j][i];
@@ -2962,7 +2963,7 @@ int main(){
                     //compare test1 and symdorme_result_x array and get index j
                     
                     
-                    for (int j=0; j<190; j++){
+                    for (int j=0; j<94183; j++){
                         
                         for (int i=0; i<9; i++){
                             test1[i]=syndrome[j][i];
